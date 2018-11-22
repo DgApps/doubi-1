@@ -7,7 +7,7 @@ export PATH
 #	Description: Brook
 #	Version: 1.1.13
 #	Author: Toyo
-#	Blog: https://doub.io/brook-jc3/
+#	Blog: https://doubioBackup.github.io/doub.io/brook-jc3/
 #=================================================
 
 sh_ver="1.1.13"
@@ -112,14 +112,14 @@ Download_brook(){
 }
 Service_brook(){
 	if [[ ${release} = "centos" ]]; then
-		if ! wget --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/brook_centos" -O /etc/init.d/brook; then
+		if ! wget --no-check-certificate "https://raw.githubusercontent.com/doubioBackup/doubi/master/service/brook_centos" -O /etc/init.d/brook; then
 			echo -e "${Error} Brook服务 管理脚本下载失败 !" && rm -rf "${file}" && exit 1
 		fi
 		chmod +x "/etc/init.d/brook"
 		chkconfig --add brook
 		chkconfig brook on
 	else
-		if ! wget --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/brook_debian" -O /etc/init.d/brook; then
+		if ! wget --no-check-certificate "https://raw.githubusercontent.com/doubioBackup/doubi/master/service/brook_debian" -O /etc/init.d/brook; then
 			echo -e "${Error} Brook服务 管理脚本下载失败 !" && rm -rf "${file}" && exit 1
 		fi
 		chmod +x "/etc/init.d/brook"
@@ -208,8 +208,8 @@ Set_port(){
 }
 Set_passwd(){
 	echo "请输入 Brook 密码（因分享链接特性，密码请勿包含 % 符号）"
-	read -e -p "(默认: doub.io):" bk_passwd
-	[[ -z "${bk_passwd}" ]] && bk_passwd="doub.io"
+	read -e -p "(默认: doubioBackup.github.io/doub.io):" bk_passwd
+	[[ -z "${bk_passwd}" ]] && bk_passwd="doubioBackup.github.io/doub.io"
 	echo && echo "========================"
 	echo -e "	密码 : ${Red_background_prefix} ${bk_passwd} ${Font_color_suffix}"
 	echo "========================" && echo
@@ -460,7 +460,7 @@ View_brook(){
 			echo -e "${Brook_link_1}"
 	done
 	echo
-	echo -e "${Tip} Brook链接 仅适用于Windows系统的 Brook Tools客户端（https://doub.io/dbrj-7/）。"
+	echo -e "${Tip} Brook链接 仅适用于Windows系统的 Brook Tools客户端（https://doubioBackup.github.io/doub.io/dbrj-7/）。"
 	echo
 }
 brook_link(){
@@ -675,13 +675,13 @@ Set_iptables(){
 	fi
 }
 Update_Shell(){
-	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/brook.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
+	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/doubioBackup/doubi/master/brook.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
 	[[ -z ${sh_new_ver} ]] && echo -e "${Error} 无法链接到 Github !" && exit 0
 	if [[ -e "/etc/init.d/brook" ]]; then
 		rm -rf /etc/init.d/brook
 		Service_brook
 	fi
-	wget -N --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/brook.sh" && chmod +x brook.sh
+	wget -N --no-check-certificate "https://raw.githubusercontent.com/doubioBackup/doubi/master/brook.sh" && chmod +x brook.sh
 	echo -e "脚本已更新为最新版本[ ${sh_new_ver} ] !(注意：因为更新方式为直接覆盖当前运行的脚本，所以可能下面会提示一些报错，无视即可)" && exit 0
 }
 check_sys
@@ -690,7 +690,7 @@ if [[ "${action}" == "monitor" ]]; then
 	crontab_monitor_brook
 else
 	echo && echo -e "  Brook 一键管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  ---- Toyo | doub.io/brook-jc3 ----
+  ---- Toyo | doubioBackup.github.io/doub.io/brook-jc3 ----
   
  ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本
 ————————————

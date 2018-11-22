@@ -7,7 +7,7 @@ export PATH
 #	Description: DAZE
 #	Version: 1.0.1
 #	Author: Toyo
-#	Blog: https://doub.io/daze-jc3/
+#	Blog: https://doubioBackup.github.io/doub.io/daze-jc3/
 #=================================================
 
 sh_ver="1.0.1"
@@ -117,14 +117,14 @@ Download(){
 }
 Service(){
 	if [[ ${release} = "centos" ]]; then
-		if ! wget --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/daze_centos -O /etc/init.d/daze; then
+		if ! wget --no-check-certificate https://raw.githubusercontent.com/doubioBackup/doubi/master/service/daze_centos -O /etc/init.d/daze; then
 			echo -e "${Error} DAZE 服务管理脚本下载失败 !" && rm -rf "${Folder}" && exit 1
 		fi
 		chmod +x /etc/init.d/daze
 		chkconfig --add daze
 		chkconfig daze on
 	else
-		if ! wget --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/service/daze_debian -O /etc/init.d/daze; then
+		if ! wget --no-check-certificate https://raw.githubusercontent.com/doubioBackup/doubi/master/service/daze_debian -O /etc/init.d/daze; then
 			echo -e "${Error} DAZE 服务管理脚本下载失败 !" && rm -rf "${Folder}" && exit 1
 		fi
 		chmod +x /etc/init.d/daze
@@ -176,8 +176,8 @@ Set_port(){
 }
 Set_password(){
 	echo "请输入 DAZE 密码"
-	read -e -p "(默认: doub.io):" new_password
-	[[ -z "${new_password}" ]] && new_password="doub.io"
+	read -e -p "(默认: doubioBackup.github.io/doub.io):" new_password
+	[[ -z "${new_password}" ]] && new_password="doubioBackup.github.io/doub.io"
 	echo && echo "========================"
 	echo -e "	密码 : ${Red_background_prefix} ${new_password} ${Font_color_suffix}"
 	echo "========================" && echo
@@ -431,7 +431,7 @@ View_daze(){
 	echo -e " 伪装\t: ${Green_font_prefix}${obfs_url}${Font_color_suffix}"
 	echo -e " DNS \t: ${Green_font_prefix}${dns}${Font_color_suffix}"
 	echo -e "${link}"
-	echo -e "${Tip} 链接仅适用于Windows系统的 DAZE Tools 客户端（https://doub.io/dbrj-17/）。"
+	echo -e "${Tip} 链接仅适用于Windows系统的 DAZE Tools 客户端（https://doubioBackup.github.io/doub.io/dbrj-17/）。"
 	echo && echo "————————————————"
 }
 urlsafe_base64(){
@@ -636,13 +636,13 @@ Set_iptables(){
 	fi
 }
 Update_Shell(){
-	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/daze.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
+	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/doubioBackup/doubi/master/daze.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1) && sh_new_type="github"
 	[[ -z ${sh_new_ver} ]] && echo -e "${Error} 无法链接到 Github !" && exit 0
 	if [[ -e "/etc/init.d/daze" ]]; then
 		rm -rf /etc/init.d/daze
 		Service
 	fi
-	wget -N --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/daze.sh" && chmod +x daze.sh
+	wget -N --no-check-certificate "https://raw.githubusercontent.com/doubioBackup/doubi/master/daze.sh" && chmod +x daze.sh
 	echo -e "脚本已更新为最新版本[ ${sh_new_ver} ] !(注意：因为更新方式为直接覆盖当前运行的脚本，所以可能下面会提示一些报错，无视即可)" && exit 0
 }
 check_sys
@@ -651,7 +651,7 @@ if [[ "${action}" == "monitor" ]]; then
 	crontab_monitor
 else
 echo && echo -e "  DAZE 一键管理脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  -- Toyo | doub.io/daze-jc3 --
+  -- Toyo | doubioBackup.github.io/doub.io/daze-jc3 --
   
  ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本
 ————————————

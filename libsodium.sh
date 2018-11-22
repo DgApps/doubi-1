@@ -7,7 +7,7 @@ export PATH
 #	Description: Libsodium Install
 #	Version: 1.0.0
 #	Author: Toyo
-#	Blog: https://doub.io/shell-jc6/
+#	Blog: https://doubioBackup.github.io/doub.io/shell-jc6/
 #=================================================
 
 Libsodiumr_file="/usr/local/lib/libsodium.so"

@@ -45,8 +45,8 @@ set_config_port(){
 }
 set_config_password(){
 	echo "请输入 ShadowsocksR 账号密码"
-	read -e -p "(默认: doub.io):" passwd
-	[[ -z "${passwd}" ]] && passwd="doub.io"
+	read -e -p "(默认: doubioBackup.github.io/doub.io):" passwd
+	[[ -z "${passwd}" ]] && passwd="doubioBackup.github.io/doub.io"
 	echo && echo -e "	密码 : ${Red_font_prefix}${passwd}${Font_color_suffix}" && echo
 }
 set_config_method(){

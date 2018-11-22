@@ -7,7 +7,7 @@ export PATH
 #	Description: Install the ShadowsocksR server
 #	Version: 1.2.9
 #	Author: Toyo
-#	Blog: https://doub.io/ss-jc42/
+#	Blog: https://doubioBackup.github.io/doub.io/ss-jc42/
 #=================================================
 
 #ssr_pid="/var/run/shadowsocks.pid"
@@ -455,8 +455,8 @@ set_port_pass(){
 	done
 	#设置密码
 	echo "${Info_input_pass}:"
-	stty erase '^H' && read -p "(${Word_default}: doub.io):" sspwd
-	[[ -z "${sspwd}" ]] && sspwd="doub.io"
+	stty erase '^H' && read -p "(${Word_default}: doubioBackup.github.io/doub.io):" sspwd
+	[[ -z "${sspwd}" ]] && sspwd="doubioBackup.github.io/doub.io"
 	echo && echo ${Separator_1} && echo -e "	${Word_pass} : ${Green_font_prefix}${sspwd}${Font_color_suffix}" && echo ${Separator_1} && echo
 }
 # 设置 加密方式、协议和混淆等
@@ -868,7 +868,7 @@ JQ_install(){
 	JQ_ver=`jq -V`
 	if [[ -z ${JQ_ver} ]]; then
 		#wget --no-check-certificate -N "https://softs.pw/Bash/other/jq-1.5.tar.gz"
-		wget --no-check-certificate -N "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/other/jq-1.5.tar.gz"
+		wget --no-check-certificate -N "https://raw.githubusercontent.com/doubioBackup/doubi/master/other/jq-1.5.tar.gz"
 		tar -xzf jq-1.5.tar.gz && cd jq-1.5
 		./configure --disable-maintainer-mode && make && make install
 		ldconfig
@@ -1025,7 +1025,7 @@ EOF
 		viewUser
 		echo
 		echo -e "ShadowsocksR ${Word_the_installation_is_complete} !"
-		echo -e "https://doub.io/ss-jc42/"
+		echo -e "https://doubioBackup.github.io/doub.io/ss-jc42/"
 		echo
 		echo "############################################################"
 	else
@@ -1055,7 +1055,7 @@ installLibsodium(){
 	fi
 	echo ${Separator_1} && echo
 	echo -e "Libsodium ${Word_the_installation_is_complete} !"
-	echo -e "https://doub.io/ss-jc42/"
+	echo -e "https://doubioBackup.github.io/doub.io/ss-jc42/"
 	echo && echo ${Separator_1}
 }
 #修改单端口用户配置
@@ -1514,7 +1514,7 @@ UninstallServerSpeeder(){
 	fi
 }
 BanBTPTSPAM(){
-	wget -4qO- raw.githubusercontent.com/ToyoDAdoubi/doubi/master/Get_Out_Spam.sh | bash
+	wget -4qO- raw.githubusercontent.com/doubioBackup/doubi/master/Get_Out_Spam.sh | bash
 }
 InstallBBR(){
 	echo -e "${Info_install_bbr_0}"

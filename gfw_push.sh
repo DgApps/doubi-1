@@ -7,7 +7,7 @@ export PATH
 #	Description: 监测IP是否被墙并推送消息至Telegram
 #	Version: 1.0.4
 #	Author: Toyo
-#	Blog: https://doub.io/shell-jc8/
+#	Blog: https://doubioBackup.github.io/doub.io/shell-jc8/
 #=================================================
 
 sh_ver="1.0.4"
@@ -359,9 +359,9 @@ View_Log(){
 	tail -f ${LOG_file}
 }
 Update_Shell(){
-	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/gfw_push.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1)
+	sh_new_ver=$(wget --no-check-certificate -qO- -t1 -T3 "https://raw.githubusercontent.com/doubioBackup/doubi/master/gfw_push.sh"|grep 'sh_ver="'|awk -F "=" '{print $NF}'|sed 's/\"//g'|head -1)
 	[[ -z ${sh_new_ver} ]] && echo -e "${Error} 无法链接到 Github !" && exit 0
-	wget -N --no-check-certificate "https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/gfw_push.sh" && chmod +x gfw_push.sh
+	wget -N --no-check-certificate "https://raw.githubusercontent.com/doubioBackup/doubi/master/gfw_push.sh" && chmod +x gfw_push.sh
 	echo -e "脚本已更新为最新版本[ ${sh_new_ver} ] !(注意：因为更新方式为直接覆盖当前运行的脚本，所以可能下面会提示一些报错，无视即可)" && exit 0
 }
 check_sys
@@ -371,7 +371,7 @@ if [[ "${action}" == "monitor" ]]; then
 	crontab_monitor
 else
 	echo && echo -e "  监测IP是否被墙脚本 ${Red_font_prefix}[v${sh_ver}]${Font_color_suffix}
-  ---- Toyo | doub.io/shell-jc8 ----
+  ---- Toyo | doubioBackup.github.io/doub.io/shell-jc8 ----
   
  ${Green_font_prefix} 0.${Font_color_suffix} 升级脚本
 ————————————

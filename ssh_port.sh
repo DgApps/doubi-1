@@ -7,7 +7,7 @@ export PATH
 #	Description: SSH modify port
 #	Version: 1.0.0
 #	Author: Toyo
-#	Blog: https://doub.io/linux-jc11/
+#	Blog: https://doubioBackup.github.io/doub.io/linux-jc11/
 #=================================================
 
 sh_ver="1.0.0"

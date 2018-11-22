@@ -18,7 +18,7 @@ var ipv6_proxy = function(){ return nowall_proxy(); };
  
 /*
  * Copyright (C) 2017-2018 Toyo
- * https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/other/pac.txt
+ * https://raw.githubusercontent.com/doubioBackup/doubi/master/other/pac.txt
  */
 
 var rules = [
@@ -2654,8 +2654,8 @@ var rules = [
 	"||dotsub.com",
 	".dotvpn.com",
 	"||dotvpn.com",
-	".doub.io",
-	"||doub.io",
+	".doubioBackup.github.io/doub.io",
+	"||doubioBackup.github.io/doub.io",
 	"||dougscripts.com",
 	"||douhokanko.net",
 	"||doujincafe.com",
